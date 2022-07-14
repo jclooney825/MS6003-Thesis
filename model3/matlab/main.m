@@ -15,13 +15,13 @@ R_oi = 2;
 Omega = 10^(-3);
 nu = 0.3;
 
-% Settings 
-N = 32; 
-tspan = [0, 1]; 
+% Concentration profiles from model 2
+t = readmatrix('data/t64.csv');
+C = readmatrix('data/C64.csv');
 
-% N = 32 on [0, 1]
-t = readmatrix('data/times.csv');
-C = readmatrix('data/C.csv');
+% Settings 
+N = width(C) - 1;
+tspan = [t(1), t(end)];
 
 % Plots results of u, P11, P22
 plot_u(N, R_oi, tspan, t, C, Omega, nu)
