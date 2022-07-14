@@ -64,5 +64,5 @@ function plot_P22(N, R_oi, tspan, t, C, Omega, nu)
     ylh.Position(1) = ylh.Position(1) - 0.025 * ylh.Position(1); 
     str = strcat('$t = $', num2str(round(timestamps,2)));
     legend(str, 'Location','northeast', 'Fontsize', 12, 'Interpreter','latex');
-    print('-depsc2','-painters','/Users/james/Desktop/MS6003-Thesis/model3/figures/P22.eps'); 
+    print('-depsc2','-painters','/Users/james/Desktop/MS6003-Thesis/model3/figures/eps_figs/P22.eps'); 
 end 
