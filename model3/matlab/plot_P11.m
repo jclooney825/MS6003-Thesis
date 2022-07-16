@@ -29,8 +29,8 @@ function plot_P11(N, R_oi, tspan, t, C, Omega, nu)
 
     % Find indicies with t_val values 
     ind = []; 
-    times = round(t, 2);
-    t_vals = linspace((tspan(2)/4), tspan(2), 4); 
+    times = round(t, 3);
+    t_vals = linspace((tspan(2)/4), tspan(2), 4);
     
     % Constants
     a = nu / ((1 + nu)*(1 - 2 * nu));
@@ -40,7 +40,7 @@ function plot_P11(N, R_oi, tspan, t, C, Omega, nu)
         elements = find(times == t_vals(i));
         ind = [ind, elements(end)];
     end
-    timestamps = t(ind); 
+    timestamps = t(ind);
 
     % The concentration values at the selected times 
     y = C(ind,:); 

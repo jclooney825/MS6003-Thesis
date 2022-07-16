@@ -29,7 +29,7 @@ function plot_u(N, R_oi, tspan, t, C, Omega, nu)
 
     % Find indicies with t_val values 
     ind = []; 
-    times = round(t, 2);
+    times = round(t, 3);
     t_vals = linspace((tspan(2)/4), tspan(2), 4);
 
     for i = 1:1:4
