@@ -57,7 +57,7 @@ function plot_P22(N, R_oi, tspan, t, C, Omega, nu)
     end
 
     % Plot settings
-    xlim([bounds(1) bounds(2)])
+    xlim([1 R_oi])
     title('Numerical solutions of $P_{22}$', 'Fontsize', 18, 'Interpreter','latex');
     xlabel('$R$', 'Interpreter','latex','Fontsize', 18);
     ylh = ylabel('$P_{22}$', 'Interpreter','latex', 'rotation', 0,'Fontsize', 18);
