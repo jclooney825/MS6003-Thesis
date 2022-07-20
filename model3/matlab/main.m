@@ -1,14 +1,14 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WEEK 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WEEK 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % James Clooney 
-% Week 6
+% Week 8
 % Mathematical Modeling MSc
 %
 % -----------------------------------------------------------------------------
 % Main function that calls all other functions. 
 % -----------------------------------------------------------------------------
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WEEK 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WEEK 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Parameters
 R_oi = 2; 
@@ -23,7 +23,8 @@ C = readmatrix('data/C64.csv');
 N = width(C) - 1;
 tspan = [t(1), t(end)];
 
-% Plots results of u, P11, P22
+% Plots results of u, P11, P22, P33
 plot_u(N, R_oi, tspan, t, C, Omega, nu)
 plot_P11(N, R_oi, tspan, t, C, Omega, nu)
 plot_P22(N, R_oi, tspan, t, C, Omega, nu)
+plot_P33(N, R_oi, tspan, t, C, Omega, nu)
