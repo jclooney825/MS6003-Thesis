@@ -29,11 +29,11 @@ function plot_u(N, R_oi, tspan, t, C, Omega, nu)
 
     % Find indicies with t_val values 
     ind = []; 
-    times = round(t, 3);
+    times = round(t, 4);
     t_vals = linspace((tspan(2)/4), tspan(2), 4);
 
     for i = 1:1:4
-        elements = find(times == t_vals(i));
+        elements = find(abs(times - t_vals(i)) < 0.001);
         ind = [ind, elements(end)];
     end
     timestamps = t(ind); 
@@ -49,7 +49,7 @@ function plot_u(N, R_oi, tspan, t, C, Omega, nu)
     lines = {'--',':','-','-.'};
     hold on; 
     for i = 1:4
-        plot(R, u(y(i,:)), 'DisplayName', strcat('t = ', num2str(times(i))),'LineWidth', 1.25, 'LineStyle', lines(i), 'Color', 'black');
+        plot(R, u(y(i,:)), 'DisplayName', strcat('t = ', num2str(t_vals(i))),'LineWidth', 1.25, 'LineStyle', lines(i), 'Color', 'black');
     end
 
     % Plot settings
@@ -58,7 +58,7 @@ function plot_u(N, R_oi, tspan, t, C, Omega, nu)
     xlabel('$R$', 'Interpreter','latex','Fontsize', 18);
     ylh = ylabel('$u_r$', 'Interpreter','latex', 'rotation', 0,'Fontsize', 18);
     ylh.Position(1) = ylh.Position(1) - 0.025 * ylh.Position(1); 
-    str = strcat('$t = $', num2str(round(timestamps,2)));
+    str = strcat('$t = $', num2str(round(timestamps, 2)));
     legend(str, 'Location','northwest', 'Fontsize', 12, 'Interpreter','latex');
     print('-depsc2','-painters','/Users/james/Desktop/MS6003-Thesis/model3/figures/eps_figs/u.eps'); 
 end 

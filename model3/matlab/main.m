@@ -15,13 +15,18 @@ R_oi = 2;
 Omega = 10^(-3);
 nu = 0.3;
 
-% Concentration profiles from model 2
-t = readmatrix('data/t64.csv');
-C = readmatrix('data/C64.csv');
+% Partition number 
+N = 32;       
 
-% Settings 
-N = width(C) - 1;
-tspan = [t(1), t(end)];
+% Time range 
+tspan = [0, 1];
+
+% Initial conditions 
+C0 = zeros(1, N+1); 
+u0 = zeros(1, N+1); 
+
+% Concentration profiles from model 2
+[t, C] = DiffusionSolver5(N, R_oi, tspan, u0, C0, Omega);
 
 % Plots results of u, P11, P22, P33
 plot_u(N, R_oi, tspan, t, C, Omega, nu)

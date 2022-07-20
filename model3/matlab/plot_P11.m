@@ -29,7 +29,7 @@ function plot_P11(N, R_oi, tspan, t, C, Omega, nu)
 
     % Find indicies with t_val values 
     ind = []; 
-    times = round(t, 3);
+    times = round(t, 4);
     t_vals = linspace((tspan(2)/4), tspan(2), 4);
     
     % Constants
@@ -37,7 +37,7 @@ function plot_P11(N, R_oi, tspan, t, C, Omega, nu)
     b = (1 - nu) / nu; 
     
     for i = 1:1:4
-        elements = find(times == t_vals(i));
+        elements = find(abs(times - t_vals(i)) < 0.001);
         ind = [ind, elements(end)];
     end
     timestamps = t(ind);
