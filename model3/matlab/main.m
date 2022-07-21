@@ -26,6 +26,8 @@ C0 = zeros(1, N+1);
 u0 = zeros(1, N+1); 
 
 addpath('/Users/james/Desktop/MS6003-Thesis/model2/matlab')  
+addpath('/Users/james/Desktop/MS6003-Thesis/model3/matlab/plotters')  
+addpath('/Users/james/Desktop/MS6003-Thesis/model3/matlab/calculate/')  
 
 % Concentration profiles from model 2
 [t, C] = DiffusionSolver5(N, R_oi, tspan, u0, C0, Omega);
