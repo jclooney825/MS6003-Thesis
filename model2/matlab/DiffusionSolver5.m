@@ -37,7 +37,7 @@ function [t, C] = DiffusionSolver5(N, R_oi, tspan, u0, C0, Omega)
     C_dot = @(t,C) odefunc(N, R_oi, u(C), C, Omega)';
     
     % Solve eqs and return 
-    options = odeset('RelTol',1e-12,'AbsTol',1e-12); 
-    [t,C] = ode45(C_dot, tspan, C0, options);
-
+    options = odeset('RelTol',1e-10,'AbsTol',1e-10); 
+    [t,C] = ode113(C_dot, tspan, C0, options);
+      
 end 
